@@ -4,6 +4,7 @@
 class Store {
   constructor(initState = {}) {
     this.state = initState;
+    this.id = 7
     this.listeners = []; // Слушатели изменений состояния
   }
 
@@ -42,12 +43,10 @@ class Store {
    * Добавление новой записи
    */
   addItem() {
-    const getRandomInt = (min, max) => {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-    this.setState({
+    this.id = this.id + 1
+   this.setState({
       ...this.state,
-      list: [...this.state.list, {code: getRandomInt(10,100) , title: 'Новая запись', count: 0}]
+      list: [...this.state.list, {code: this.id , title: 'Новая запись', count: 0}]
     })
   };
 
