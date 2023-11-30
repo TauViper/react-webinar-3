@@ -1,0 +1,11 @@
+.App-controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    grid-gap: 25px;
+}
+.controls-action{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0 20px 10px;
+}

@@ -1,3 +1,5 @@
+import item from "./components/item";
+
 /**
  * Хранилище состояния приложения
  */
@@ -44,36 +46,21 @@ class Store {
   addItem() {
     this.setState({
       ...this.state,
-      list: [...this.state.list, {code: this.state.list.length + 1, title: 'Новая запись'}]
+      list: [...this.state.list, {code: this.state.list.length + 1, title: 'Новая запись', price: 0}]
     })
   };
 
   /**
    * Удаление записи по коду
-   * @param code
+   * @param item
    */
-  deleteItem(code) {
+  addToCart(item) {
     this.setState({
       ...this.state,
-      list: this.state.list.filter(item => item.code !== code)
+      cart:[ ...this.state.cart, item]
     })
+    console.log(this.state.cart)
   };
-
-  /**
-   * Выделение записи по коду
-   * @param code
-   */
-  selectItem(code) {
-    this.setState({
-      ...this.state,
-      list: this.state.list.map(item => {
-        if (item.code === code) {
-          item.selected = !item.selected;
-        }
-        return item;
-      })
-    })
-  }
 }
 
 export default Store;
