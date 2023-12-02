@@ -6,6 +6,7 @@ import Item from "./components/item";
 import Controls from "./components/controls";
 import PageLayout from "./components/pageLayout";
 import ListItems from "./components/listItems";
+import CartItems from "./components/cart";
 
 /**
  * Приложение
@@ -15,12 +16,14 @@ import ListItems from "./components/listItems";
 function App({store}) {
 
   const list = store.getState().list;
+  const cart = store.getState().cart;
 
   return (
     <PageLayout>
       <Head title='Магазин'/>
      <Controls store={store}/>
     <ListItems list={list} store={store}/>
+        <CartItems cart={cart} store={store}/>
     </PageLayout>
   );
 }

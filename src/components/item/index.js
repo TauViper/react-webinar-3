@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css'
 
+
+export const numberWithSpaces = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 const Item = ({props, store}) => {
-    const numberWithSpaces = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
     return (
         <div className='Item'>
@@ -24,6 +25,8 @@ Item.propTypes = {
     code: PropTypes.string,
     selected: PropTypes.string,
     title: PropTypes.string,
+    price: PropTypes.number,
+    quantity: PropTypes.number,
 };
 
 export default Item;
