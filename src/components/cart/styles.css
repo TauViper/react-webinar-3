@@ -4,17 +4,6 @@
 .cart-visible{
     display: block;
 }
-
-.List-item {
-    border-bottom: 1px dashed #ccc;
-}
-.cart-list{
-    position: absolute;
-    min-width: 980px;
-    top: 30%;
-    left: 2%;
-    background: white;
-}
 .cart-background{
     position: absolute;
     top: 0;
@@ -23,13 +12,19 @@
     background: darkgrey;
     opacity: 0.6; ;
 }
+.cart-list{
+    position: absolute;
+    min-width: 980px;
+    top: 30%;
+    left: 2%;
+    background: white;
+}
 .cart-head {
     display: flex;
     justify-content: space-between;
     height: 80px;
     background: #f5f5f5;
 }
-
 .cart-head h1 {
     margin: 0;
     padding: 20px 20px 10px;

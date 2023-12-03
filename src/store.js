@@ -37,17 +37,6 @@ class Store {
         // Вызываем всех слушателей
         for (const listener of this.listeners) listener();
     }
-
-    /**
-     * Добавление новой записи
-     */
-    addItem() {
-        this.setState({
-            ...this.state,
-            list: [...this.state.list, {code: this.state.list.length + 1, title: 'Новая запись', price: 0}]
-        })
-    };
-
     /**
      * Добавление товара в корзину
      * @param item
@@ -79,11 +68,11 @@ class Store {
 
     /**
      * Удаление товара шз корзины
-     * @param code
+     * @param item
      */
-    onDeleteChat(code) {
+    onDeleteItem(item) {
 
-        const del = this.state.cart.filter((item) => item.code !== code);
+        const del = this.state.cart.filter((el) => el.code !== item.code);
         this.setState({
             ...this.state,
             cart: [...del]
@@ -106,9 +95,4 @@ class Store {
         });
     }
 }
-
-
-
-
-
 export default Store;
